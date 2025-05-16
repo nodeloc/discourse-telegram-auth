@@ -12,7 +12,11 @@ enabled_site_setting :telegram_auth_enabled
 
 register_svg_icon "fab-telegram"
 
-extend_content_security_policy script_src: %w[https://telegram.org 'unsafe-inline']
+extend_content_security_policy(
+  script_src: %w[https://telegram.org 'unsafe-inline'],
+  frame_src: %w[https://t.me https://telegram.org],
+  child_src: %w[https://t.me https://telegram.org],
+)
 
 require "omniauth/telegram"
 class ::TelegramAuthenticator < ::Auth::ManagedAuthenticator

@@ -3,7 +3,7 @@ plugins:
     default: false
   telegram_auth_bot_name:
     default: ''
-    regex: ".+[Bb]ot"
+    regex: ".+"
   telegram_auth_bot_token:
     default: ''
     regex: "^[0-9]{10}:[a-zA-Z0-9_-]{35}$"
