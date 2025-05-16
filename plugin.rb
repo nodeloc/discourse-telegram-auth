@@ -37,6 +37,16 @@ class ::TelegramAuthenticator < ::Auth::ManagedAuthenticator
                           strategy.options[:bot_secret] = SiteSetting.telegram_auth_bot_token
                         }
   end
+
+  def after_authenticate(auth_token, existing_account: nil)
+    result = super
+    telegram_uid = auth_token[:uid]
+    if result.user && telegram_uid
+      result.user.custom_fields["telegram_chat_id"] = telegram_uid
+      result.user.save_custom_fields
+    end
+    result
+  end
 end
 
 auth_provider authenticator: ::TelegramAuthenticator.new, icon: "fab-telegram"

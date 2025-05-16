@@ -28,7 +28,7 @@ module OmniAuth
             <title>Telegram Login</title>
           </head>
           <body>
-            <a href="#{redirect_url}" class="btn btn-primary">Login with Telegram</a>
+            <a href="#{redirect_url}" class="btn btn-primary">Login with Telegram</a> 
           </body>
           </html>
         HTML
