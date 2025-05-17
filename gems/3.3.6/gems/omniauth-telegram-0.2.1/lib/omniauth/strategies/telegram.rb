@@ -44,6 +44,7 @@ module OmniAuth
       end
 
       uid { request.params["id"] }
+      Rails.logger.warn("Telegram callback params: #{request.params.inspect}")
 
       info do
         {
