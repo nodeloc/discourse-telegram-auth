@@ -36,6 +36,7 @@ module OmniAuth
       end
 
       def callback_phase
+        Rails.logger.warn("Telegram callback params: #{request.params.inspect}")
         if error = check_errors
           fail!(error)
         else
@@ -44,7 +45,6 @@ module OmniAuth
       end
 
       uid { request.params["id"] }
-      Rails.logger.warn("Telegram callback params: #{request.params.inspect}")
 
       info do
         {
