@@ -2,4 +2,4 @@
 This plugin adds support logging in via Telegram
 
 
-More discourse plugin from NodeLoc.  [https://www.](https://discourseplugin.com/)
+More discourse plugin from NodeLoc.  [DiscoursePlugin](https://discourseplugin.com/)
